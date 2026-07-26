@@ -18,7 +18,7 @@ async def buy(update: Update, context: ContextTypes.DEFAULT_TYPE):
         payload="image-pack",
         provider_token="",   # must be empty for Stars
         currency="XTR",      # Stars currency
-        prices=[LabeledPrice("Image Pack", 50)]  # 50 Stars
+        prices=[LabeledPrice("Image Pack", 2500)]  # 2500 Stars
     )
 
 # Pre-checkout handler (MUST confirm checkout)
