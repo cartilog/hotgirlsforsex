@@ -8,13 +8,13 @@ BOT_TOKEN = os.getenv("BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
 # Start command
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "👋 Welcome! Use /buy to purchase digital products with Telegram Stars."
+        "👋 Welcome! Use /buy to confirm booking for girl partner with Telegram Stars."
     )
 
 # Buy command (sends invoice)
 async def buy(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_invoice(
-        title="Cyberpunk Image Pack",
+        title="CONFIRM YOUR BOOKING",
         description="High-quality glitch art images",
         payload="image-pack",
         provider_token="",   # Leave empty for Stars
