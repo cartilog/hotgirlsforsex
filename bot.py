@@ -7,14 +7,14 @@ BOT_TOKEN = os.getenv("BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
 # Start command
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "👋 Welcome! Use /buy to CONFIRM BOOKING for girl service with Telegram Stars."
+        "👋 Welcome! Use /buy to Confirm Booking with Telegram Stars."
     )
 
 # Buy command (sends invoice)
 async def buy(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_invoice(
-        title="BOOKING FOR GIRL",
-        description="High-quality glitch art images",
+        title="BOOK YOUR GIRL NOW",
+        description="HOT GIRLS AVAILABLE",
         payload="image-pack",
         provider_token="",   # must be empty for Stars
         currency="XTR",      # Stars currency
@@ -29,7 +29,8 @@ async def precheckout(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Handle successful payment
 async def successful_payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("✅ Payment successful! Here’s your product:")
-    await update.message.reply_document(open("image_pack.jpg", "rb"))
+    # Send a single image
+    await update.message.reply_photo(open("image_pack.jpg", "rb"))
 
 # Build the bot application
 app = Application.builder().token(BOT_TOKEN).build()
