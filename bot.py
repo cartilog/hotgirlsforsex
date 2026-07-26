@@ -29,7 +29,7 @@ async def precheckout(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Handle successful payment
 async def successful_payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("✅ Payment successful! Here’s your product:")
-    await update.message.reply_document(open("image_pack.zip", "rb"))
+    await update.message.reply_document(open("image_pack.jpg", "rb"))
 
 # Build the bot application
 app = Application.builder().token(BOT_TOKEN).build()
